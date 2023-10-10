@@ -8,6 +8,9 @@
 .env.*
 !.env.example
 
+# Prisma Migration
+prisma/migrations/
+
 # Logs
 logs
 *.log

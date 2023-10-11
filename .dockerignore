@@ -1,0 +1,6 @@
+Dockerfile
+.eslintrc.js
+*.md
+.dockerignore
+.env.*
+.prettierrc

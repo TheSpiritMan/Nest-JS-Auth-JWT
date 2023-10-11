@@ -19,14 +19,9 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "dotenv -e .env.test -- jest --watch --no-cache --config ./test/jest-e2e.json",
     "prisma:migrate:dev": "npx prisma migrate dev",
-    "db:dev:rm": "docker compose rm dev_camp_db -sfv",
-    "db:dev:up": "docker compose up dev_camp_db  -d",
-    "db:dev:rebuild": "npm run db:dev:rm && npm run db:dev:up && sleep 2; npm run prisma:migrate:dev",
-    "prisma:migrate:test": "dotenv -e .env.test -- npx prisma migrate dev",
-    "db:test:rm": "docker compose rm test_camp_db -sfv",
-    "db:test:up": "docker compose up test_camp_db -d",
-    "db:test:rebuild": "npm run db:test:rm && npm run db:test:up && sleep 2; npm run prisma:migrate:test",
-    "pretest:e2e": "npm run db:test:rebuild"
+    "db:dev:rm": "docker compose rm -sfv",
+    "db:dev:up": "docker compose up -d",
+    "db:dev:rebuild": "npm run db:dev:rm && npm run db:dev:up && sleep 2; npm run prisma:migrate:dev"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",

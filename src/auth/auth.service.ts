@@ -24,9 +24,6 @@ export class AuthService {
           password: hash,
         },
       });
-      delete user.password;
-      // console.log(user);
-      // return user;
       return this.signToken(user.id, user.email);
     } catch (error) {
       if (error instanceof PrismaClientKnownRequestError) {
